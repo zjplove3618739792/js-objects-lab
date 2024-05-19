@@ -63,3 +63,72 @@ game.gyms.forEach(g=> {
 // Exercise 8
 
 
+game.party = game.party.map(p => {
+  if (p.starter=== true) {
+    const evolveParty = pokemon.find(pk =>
+     pk.number === p.number + 1); 
+    return evolveParty
+  }else{
+    return p
+  }
+})
+
+// Exercise 9
+
+const pokeN = game.party.map(p => p.name)
+
+// Exercise 10
+
+const starterN = pokemon.map(p => {
+  if (p.starter === true){
+    return p.name
+  }
+})
+
+// Exercise 11
+
+game.catchPokemon = (pokemonObj) => {
+  game.party.push(pokemonObj);
+};
+
+
+// Exercise 12
+
+
+
+// Exercise 13
+
+
+game.gyms.forEach(g=> {
+  if(g.difficulty < 6){
+    g.completed = true
+  }
+});
+// Exercise 14
+const gymCom= {
+    completed: 0,
+    incomplete: 0,
+  };
+game.gyms.forEach(gym => {
+    if (gym.completed === true) {
+      gymCom.completed += 1;
+    } else {
+      gymCom.incomplete += 1;
+    }
+  });
+// Exercise 15
+game.partyCount = () => {
+  const count = game.party.length
+  return count
+} 
+// Exercise 16
+game.gyms.forEach(gym => {
+  if (gym.difficulty < 8) {
+    gym.completed = true;
+  }
+});
+ 
+
+// Exercise 17
+
+console.log(game);
